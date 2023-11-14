@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+*, *::after, *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: hsl(234, 29%, 20%) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    font-size:16px;
+    font-family: 'Roboto', sans-serif;
+   position: relative;
+}
+.newsletter{
+    background-color: hsl(0, 0%, 100%);
+    padding:1rem;
+    border-radius: 20px;
+    min-height: 350px;
+    display: flex;
+    max-width: 650px;
+}
+.newsletter.hide{
+    display: none;
+}
+ul{
+    list-style: none;
+}
+
+.newsletter-img{
+    background-image: url('./assets/images/illustration-sign-up-desktop.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+   border-radius:10px ;
+   min-width: 250px;
+}
+.newsletter-img img{
+    display: block;
+}
+.newsletter-text{
+    padding: 3rem 2rem;
+}
+.newsletter-text h1{
+    margin-bottom: 2rem;
+    font-size: 2.6rem;
+    color: hsl(235, 18%, 26%);
+}
+.newsletter-text p{
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+.newsletter-text ul{
+    margin-bottom: 1rem;
+    
+}
+.newsletter-text ul li, .newsletter-text p{
+    color: hsl(235, 18%, 26%);
+    font-size: 14px;
+    line-height: 1.5;
+}
+.newsletter-text ul li{
+    line-height: 1.75;
+}
+.newsletter-text ul li img{
+    max-width: 15px;
+    display: inline-block;
+    margin-right: 5px;  
+}
+label{
+    font-size: 10px;
+    font-weight: 700;
+    color: hsl(234, 29%, 20%);
+   
+}
+input{
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: .75rem;
+    border:1px solid hsla(231, 7%, 60%, .4);
+    border-radius: 5px;
+}
+input.error{
+    border:1px solid #FA6742;
+   background-color: rgba(250, 103, 66, .2);
+    color: #FA6742;
+}
+button{
+    width: 100%;
+    padding: 1rem;
+    border:none;
+    color:  hsl(0, 0%, 100%);
+    font-weight: 700;
+    font-size: 14px;
+    background-color: hsl(235, 18%, 26%);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+button:hover{
+    background-image: linear-gradient(to left, #FA6742, #F95474);
+    box-shadow: 0 0 25px hsl(231, 7%, 60%);
+}
+.success-message{
+    width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    padding:3rem;
+    color: hsl(234, 29%, 20%);
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 0 10px rgba(0,0,0, .5);
+    display: none;
+}
+.success-message.show{
+    display: block;
+}
+.success-message img{
+    display: block;
+    margin-bottom: 2rem;
+}
+.success-message h2{
+    margin-bottom: 1rem;
+    font-size: 2.6rem;
+}
+.success-message p{
+    font-size: 14px;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    padding-right:  1rem;
+}
+.success-message p a{
+    font-weight: 700;
+    color: hsl(234, 29%, 20%);
+    text-decoration: none;
+}
+.label-error{
+    display: flex;
+    justify-content: space-between;
+}
+.error {
+    color:#FA6742;
+    font-size: 10px;
+    font-weight: 700;
+}
+@media (max-width:380px) {
+    .newsletter-img{
+        background-image: url('./assets/images/illustration-sign-up-mobile.svg');
+    } 
+    .newsletter{
+       flex-direction: column;
+       padding:0;
+       height: 100vh;
+    }
+    .newsletter-img{
+       min-height: 250px;
+       order:0;
+       border-top-right-radius: 0;
+       border-top-left-radius: 0;
+    }
+    .newsletter-text{
+        order:1;
+    }
+    .success-message{
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        border-radius: 10px;
+        padding:1rem;
+        color: hsl(234, 29%, 20%);
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        box-shadow: 0 0 10px rgba(0,0,0, .5);
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .success-message button{
+        margin-top: 15rem;
+    }
+    .success-message.show{
+        display: flex;
+    }
+}
